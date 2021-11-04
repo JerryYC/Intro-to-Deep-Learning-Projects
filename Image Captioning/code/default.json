@@ -1,0 +1,42 @@
+{
+  "experiment_name": "final_test",
+  "dataset": {
+    "training_ids_file_path": "./train_ids.csv",
+    "validation_ids_file_path": "./val_ids.csv",
+    "test_ids_file_path": "./test_ids.csv",
+    "training_annotation_file_path": "./data/annotations/captions_train2014.json",
+    "test_annotation_file_path": "./data/annotations/captions_val2014.json",
+    "images_root_dir": "./data/images/",
+    "vocabulary_threshold": 2,
+    "img_size": 256,
+    "batch_size": 128,
+    "num_workers": 12,
+    "rotation": false,
+    "hflip": false,
+    "vflip": false
+  },
+  "experiment": {
+    "num_epochs": 1,
+    "learning_rate": 1e-3,
+    "eps": 1e-8,
+    "weight_decay": 1e-4,
+    "amsgrad": false,
+    "step": 3,
+    "scheduler_gamma": 0.1,
+    "early_stop": false,
+    "patience": 3,
+    "step_size": 3
+  },
+  "model": {
+	"device": "cuda",
+    "hidden_size": 2048,
+    "embedding_size": 2048,
+    "model_type": "arch2",
+    "finetune": false
+  },
+  "generation": {
+    "max_length": 20,
+    "mode": "deterministic",
+    "temperature": 0.5
+  }
+}
